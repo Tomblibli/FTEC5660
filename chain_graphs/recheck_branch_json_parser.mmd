@@ -1,0 +1,18 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	PromptInput([PromptInput]):::first
+	ChatPromptTemplate(ChatPromptTemplate)
+	ChatDeepSeek(ChatDeepSeek)
+	JsonOutputParser(JsonOutputParser)
+	JsonOutputParserOutput([JsonOutputParserOutput]):::last
+	PromptInput --> ChatPromptTemplate;
+	ChatPromptTemplate --> ChatDeepSeek;
+	JsonOutputParser --> JsonOutputParserOutput;
+	ChatDeepSeek --> JsonOutputParser;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

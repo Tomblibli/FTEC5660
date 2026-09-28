@@ -1,0 +1,14 @@
+graph TD
+	classDef prompt fill:#e3f2fd,stroke:#1565c0,stroke-width:1px
+	classDef model fill:#fff3e0,stroke:#ef6c00,stroke-width:1px
+	classDef result fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px
+	PROMPT["ChatPromptTemplate<br/>system = LINE_RULES<br/>variables = image_data_url, receipt_name"]:::prompt
+	CALL1["ChatDeepSeek<br/>with_structured_output(ReceiptData,<br/>method='function_calling')"]:::model
+	CALL2["ChatDeepSeek<br/>with_structured_output(ReceiptData,<br/>method='json_mode')"]:::model
+	CALL3["ChatDeepSeek<br/>plain text answer<br/>+ JsonOutputParser(pydantic_object=ReceiptData)"]:::model
+	RESULT(["ReceiptData"]):::result
+	PROMPT --> CALL1
+	CALL1 -->|valid JSON| RESULT
+	CALL1 -.->|fallback 1| CALL2
+	CALL2 -.->|fallback 2| CALL3
+	CALL3 --> RESULT

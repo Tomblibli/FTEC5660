@@ -1,0 +1,18 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	PromptInput([PromptInput]):::first
+	ChatPromptTemplate(ChatPromptTemplate)
+	ChatDeepSeek(ChatDeepSeek)
+	PydanticOutputParser(PydanticOutputParser)
+	ReceiptData([ReceiptData]):::last
+	PromptInput --> ChatPromptTemplate;
+	ChatPromptTemplate --> ChatDeepSeek;
+	PydanticOutputParser --> ReceiptData;
+	ChatDeepSeek --> PydanticOutputParser;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
