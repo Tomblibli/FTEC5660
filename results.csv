@@ -1,0 +1,3 @@
+query,model_response,correctness
+How much money did I spend in total for these bills?,HK$1974.30,correct
+How much would I have had to pay without the discount?,HK$2348.20,correct
