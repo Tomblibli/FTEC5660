@@ -50,6 +50,7 @@ homework runner.
 
 ## Homework 1 solution: 
 > to students: please fill your solution description here.
+
 Name: Yanyu Lu
 
 By the way, before filling in my code, I try to test the exist code and find I create ".env" file
@@ -57,6 +58,7 @@ as ".txt" and it cannot pass the recognition of "load_env_file" function, only t
 ".utf-8", it can run.
 
 * build_chain()
+
 Step 1: Define the class "ReceiptLine" and "ReceiptData" to record items, discounts, 
 subtotal, rouding, amount_paid .etc .
 
